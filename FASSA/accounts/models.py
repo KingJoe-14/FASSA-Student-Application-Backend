@@ -81,7 +81,7 @@ class AccountVerificationOTP(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
 
     def is_expired(self):
-        return timezone.now() > self.created_at + timedelta(days=1)
+        return timezone.now() > self.created_at + timedelta(minutes=5)
 
     @staticmethod
     def generate_otp():
@@ -97,13 +97,12 @@ class PasswordResetOTP(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
 
     def is_expired(self):
-        return timezone.now() > self.created_at + timedelta(minutes=10)
+        return timezone.now() > self.created_at + timedelta(minutes=5)
 
     def __str__(self):
         return f"{self.email} - {self.otp}"
 
     @classmethod
     def generate_otp(cls):
-        """Generate a 6-digit numeric OTP"""
         from random import randint
         return f"{randint(100000, 999999)}"
