@@ -11,7 +11,8 @@ from clubs.serializers import (
     ClubSerializer,
     ClubMembershipSerializer,
     ClubEventSerializer,
-    ClubEventApprovalSerializer
+    ClubEventApprovalSerializer,
+    ClubEventCreateSerializer,
 )
 from clubs.permissions import IsClubPresident # import the new permission
 
@@ -114,7 +115,7 @@ class ClubPresidentEventCreateView(generics.CreateAPIView):
     """
     Allows a club President to create an event for their club.
     """
-    serializer_class = ClubEventSerializer
+    serializer_class = ClubEventCreateSerializer
     permission_classes = [IsAuthenticated, IsClubPresident]
 
     def perform_create(self, serializer):

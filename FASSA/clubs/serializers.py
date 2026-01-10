@@ -76,3 +76,9 @@ class ClubEventApprovalSerializer(serializers.ModelSerializer):
     class Meta:
         model = ClubEvent
         fields = ['is_approved']
+
+
+class ClubEventCreateSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = ClubEvent
+        fields = ['title', 'description', 'venue', 'event_date']
