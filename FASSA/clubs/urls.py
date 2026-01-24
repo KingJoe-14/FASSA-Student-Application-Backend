@@ -13,7 +13,6 @@ urlpatterns = [
     path('clubs/', AdminClubListCreateView.as_view()),
     path('clubs/<int:pk>/', AdminClubRetrieveUpdateDeleteView.as_view()),
 
-    # Members
     path('clubs/<int:club_id>/members/', AdminClubMemberListCreateView.as_view()),
     path('clubs/members/<int:pk>/', AdminClubMemberRetrieveUpdateDeleteView.as_view()),
 
