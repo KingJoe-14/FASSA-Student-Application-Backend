@@ -3,7 +3,6 @@ from .models import Announcement
 from .serializers import AnnouncementSerializer
 from accounts.permissions import IsAdmin, IsSuperAdmin  # reuse your permissions
 
-# List all active announcements for students
 class AnnouncementListView(generics.ListAPIView):
     serializer_class = AnnouncementSerializer
     permission_classes = [permissions.IsAuthenticated]
