@@ -11,7 +11,8 @@ SECRET_KEY = os.getenv('DJANGO_SECRET_KEY')
 
 DEBUG = ('DJANGO_DEBUG')
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["0.0.0.0", "127.0.0.1", "localhost"]
+
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -64,7 +65,7 @@ CORS_ALLOWED_ORIGINS = [
     "http://127.0.0.1:3000",
 ]
 
-ROOT_URLCONF = 'FASSA.urls'
+ROOT_URLCONF = 'fassa.urls'
 
 TEMPLATES = [
     {
@@ -81,7 +82,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'FASSA.wsgi.application'
+WSGI_APPLICATION = 'fassa.wsgi.application'
 
 
 DATABASES = {
