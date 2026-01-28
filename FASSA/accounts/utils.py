@@ -15,11 +15,11 @@ def generate_temporary_password(length=10):
 
 def send_account_email(user_email, full_name, role, temp_password):
     role_text = "Faculty Admin" if role == 'ADMIN' else "Student"
-    subject = "Your FASSA Account Has Been Created"
+    subject = "Your fassa Account Has Been Created"
     message = f"""
 Hello {full_name},
 
-An account has been created for you as a FASSA {role_text}.
+An account has been created for you as a fassa {role_text}.
 Here are your login details:
 
 Email: {user_email}
@@ -30,27 +30,27 @@ Login here: http://127.0.0.1:8000/api/accounts/login/
 Please change your password after logging in.
 
 Regards,
-FASSA
+fassa
 """
-    from_email = f"FASSA <{settings.EMAIL_HOST_USER}>"
+    from_email = f"fassa <{settings.EMAIL_HOST_USER}>"
     send_mail(subject, message, from_email, [user_email], fail_silently=False)
 
 #verify account
 def send_student_verification_otp(email, full_name, otp):
-    subject = "Verify Your FASSA Account"
+    subject = "Verify Your fassa Account"
     message = f"""
 Hello {full_name},
 
-Your FASSA account verification OTP is: {otp}
+Your fassa account verification OTP is: {otp}
 
 It will expire in 5 minutes.
 
 If you did not register, please ignore this email.
 
 Regards,
-FASSA
+fassa
 """
-    from_email = f"FASSA <{settings.EMAIL_HOST_USER}>"
+    from_email = f"fassa <{settings.EMAIL_HOST_USER}>"
     send_mail(subject, message, from_email, [email], fail_silently=False)
 
 
@@ -59,11 +59,11 @@ def send_password_reset_otp(email, otp):
     """
     Sends a 6-digit OTP to the user's email for password reset.
     """
-    subject = "FASSA Password Reset OTP"
+    subject = "fassa Password Reset OTP"
     message = f"""
 Hello,
 
-Your OTP code to reset your FASSA password is:
+Your OTP code to reset your fassa password is:
 
 {otp}
 
@@ -72,9 +72,9 @@ It expires in 5 minutes.
 If you did not request this, please ignore this email.
 
 Regards,
-FASSA
+fassa
 """
-    from_email = f"FASSA <{settings.EMAIL_HOST_USER}>"
+    from_email = f"fassa <{settings.EMAIL_HOST_USER}>"
     send_mail(subject, message, from_email, [email], fail_silently=False)
 
 

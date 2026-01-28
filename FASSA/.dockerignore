@@ -1,0 +1,46 @@
+# Python bytecode and caches
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual environments
+venv/
+env/
+ENV/
+.venv/
+
+# Django local settings / secrets
+*.env
+*.sqlite3
+
+# Logs
+*.log
+*.pot
+*.pyc
+
+# Git files
+.git/
+.gitignore
+
+# Docker files
+Dockerfile
+docker-compose*.yml
+
+# Static and media files (collected separately in Docker)
+staticfiles/
+media/
+
+# IDE/editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Node modules if you have front-end assets
+node_modules/
+
+# Other unnecessary files
+*.bak
+*.old
+*.tmp
