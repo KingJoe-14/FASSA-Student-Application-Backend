@@ -3,3 +3,12 @@ venv/
 
 __pycache__/
 *.pyc
+
+staticfiles/
+mediafiles/
+
+# Docker / local
+docker-compose.yml
+
+# OS
+.DS_Store
